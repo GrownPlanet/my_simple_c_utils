@@ -13,8 +13,5 @@ all: $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) -I$(INCDIR) $^ -o $@
-	mv *.o $(BINDIR)
-
-clean:
-	rm -f $(OBJECTS) $(EXECUTABLE)
-
+	@echo "----------------- done compiling -----------------"
+	@mv *.o $(BINDIR)
