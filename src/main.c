@@ -22,6 +22,7 @@ int main() {
 
     free(split_string);
   }
+  printf("\n");
 
   {
     // calculate average
@@ -33,6 +34,7 @@ int main() {
     float aver = average(array, size);
     printf("%f\n", aver);
   }
+  printf("\n");
 
   return 0;
 }
