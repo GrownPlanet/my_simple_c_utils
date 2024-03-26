@@ -38,11 +38,6 @@ struct SplitString split_by(const char* str, char ch) {
   int amount_of_parts = count_char(str, ch) + 1;
   int* part_lengs = lengs(str, ch, amount_of_parts);
 
-  int leng = 0;
-  for (int i = 0; i < amount_of_parts; i++) { 
-    leng += part_lengs[i];
-  }
-
   char** split_string = (char**)malloc(sizeof(char*) * amount_of_parts);
   checkMalloc(split_string);
 
@@ -66,4 +61,25 @@ struct SplitString split_by(const char* str, char ch) {
   return_val.len = amount_of_parts;
 
   return return_val;
+}
+
+// calculate average
+float average(int* arr, size_t size) {
+  float average = 0.0;
+
+  for(int i = 0; i < size; i++) {
+    average += (float)arr[i];
+  }
+  average /= size;
+
+  return average;
+}
+
+void print_array(int* arr, size_t len) {
+  printf("["); 
+  for (int i = 0; i < len - 1; i++) { 
+    printf("%d, ", arr[i]);
+  } 
+  printf("%d", arr[len - 1]); 
+  printf("]\n");
 }
