@@ -1,4 +1,4 @@
-#include "../headerfiles/utils.h"
+#include "../headerfiles/string_utils.h"
 
 #include<stdio.h>
 #include<string.h>
@@ -6,7 +6,6 @@
 
 #define checkMalloc(v) if(v==NULL) { printf("malloc failed!\n"); exit(1); }
 
-// count how many times a char is in a given string
 int count_char(const char* s, char c) {
   int count = 0;
   for (int i = 0; i < strlen(s); i++) {
@@ -17,7 +16,6 @@ int count_char(const char* s, char c) {
   return count;
 }
 
-// get the lenghts of all the parts 
 int* lengs(const char* s, char c, int amount_of_parts) {
   int* lengs = (int*)malloc(sizeof(int) * amount_of_parts);
   checkMalloc(lengs);
@@ -42,14 +40,14 @@ struct SplitString split_by(const char* str, char ch) {
   checkMalloc(split_string);
 
   int offset = 0;
-  for (int i = 0; i <= amount_of_parts; i++) { 
+  for (int i = 0; i <= amount_of_parts; i++) {
     char* acc = (char*)malloc(sizeof(char) * part_lengs[i]);
 
     for (int k = 0; k < part_lengs[i]; k++) {
       acc[k] = str[offset + k];
     }
     split_string[i] = acc;
-    
+
     offset += part_lengs[i] + 1;
   }
 
@@ -61,25 +59,4 @@ struct SplitString split_by(const char* str, char ch) {
   return_val.len = amount_of_parts;
 
   return return_val;
-}
-
-// calculate average
-float average(int* arr, size_t size) {
-  float average = 0.0;
-
-  for(int i = 0; i < size; i++) {
-    average += (float)arr[i];
-  }
-  average /= size;
-
-  return average;
-}
-
-void print_array(int* arr, size_t len) {
-  printf("["); 
-  for (int i = 0; i < len - 1; i++) { 
-    printf("%d, ", arr[i]);
-  } 
-  printf("%d", arr[len - 1]); 
-  printf("]\n");
 }

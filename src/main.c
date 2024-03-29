@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-#include "headerfiles/utils.h"
+#include "headerfiles/string_utils.h"
+#include "headerfiles/array_utils.h"
 
 int main() {
   {
@@ -25,14 +26,12 @@ int main() {
   printf("\n");
 
   {
-    // calculate average
+    // print array
     printf("Split a string by a specific char\n");
     int array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     int size = sizeof(array) / sizeof(int);
     printf("array: ");
     print_array(array, size);
-    float aver = average(array, size);
-    printf("%f\n", aver);
   }
   printf("\n");
 
