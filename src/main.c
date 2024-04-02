@@ -2,6 +2,7 @@
 
 #include "headerfiles/string_utils.h"
 #include "headerfiles/array_utils.h"
+#include "headerfiles/vector.h"
 
 int main() {
   {
@@ -30,8 +31,27 @@ int main() {
     printf("Split a string by a specific char\n");
     int array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     int size = sizeof(array) / sizeof(int);
-    printf("array: ");
+    printf("array: \n");
     print_array(array, size);
+  }
+  printf("\n");
+
+  {
+    printf("vectors\n");
+
+    Vec vector = new_vec(16);
+
+    print_vec(&vector);
+    for(int i = 0; i < 20; i++) {
+      push_vec(&vector, i);
+    }
+    insert_vec(&vector, 10, 99);
+    print_vec(&vector);
+
+    set_vec(&vector, 11, 100);
+    printf("%d\n", get_vec(&vector, 11));
+
+    free(vector.data);
   }
   printf("\n");
 

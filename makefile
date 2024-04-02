@@ -12,7 +12,7 @@ SRCS := $(wildcard src/*.c) $(wildcard src/sourcefiles/*.c)
 OBJS := $(patsubst src/%.c,$(OUT_DIR)/%.o,$(SRCS))
 
 # Executable name
-EXEC = main
+EXEC = out
 
 # Default target
 all: $(EXEC)
