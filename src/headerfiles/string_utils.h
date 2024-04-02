@@ -1,8 +1,8 @@
 #pragma once
 
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 // return type when splitting a string
 struct SplitString {

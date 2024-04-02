@@ -1,6 +1,4 @@
-#include "../headerfiles/array_utils.h"
-
-#include <stddef.h>
+#include "array_utils.h"
 
 void print_array(int* arr, size_t len) {
   printf("["); 

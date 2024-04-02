@@ -1,4 +1,4 @@
-#include "../headerfiles/vector.h"
+#include "vector.h"
 
 #define die(s, ...) printf(s, ##__VA_ARGS__); exit(1);
 

@@ -1,8 +1,4 @@
-#include "../headerfiles/string_utils.h"
-
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
+#include "string_utils.h"
 
 #define checkMalloc(v) if(v==NULL) { printf("malloc failed!\n"); exit(1); }
 

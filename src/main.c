@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-#include "headerfiles/string_utils.h"
-#include "headerfiles/array_utils.h"
-#include "headerfiles/vector.h"
+#include "string_utils.h"
+#include "array_utils.h"
+#include "vector.h"
 
 int main() {
   {
