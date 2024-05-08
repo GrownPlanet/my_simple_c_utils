@@ -24,5 +24,7 @@ char* read_to_string(char* filename) {
     file_data[i] = c;
   }
 
+  fclose(file);
+
   return file_data;
 }
