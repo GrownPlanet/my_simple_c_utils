@@ -1,5 +1,4 @@
-#ifndef VECTOR_H
-#define VECTOR_H
+#pragma once
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -30,5 +29,3 @@ int get_vec(Vec* vec, size_t index);
 
 // set value at a given index
 void set_vec(Vec* vec, size_t index, int val);
-
-#endif
