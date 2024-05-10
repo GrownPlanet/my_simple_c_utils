@@ -9,20 +9,24 @@ char* read_to_string(char* filename) {
   }
 
   fseek(file, 0L, SEEK_END);
-  int file_len = ftell(file);
+  long file_len = ftell(file);
   rewind(file);
 
-  char* file_data = (char*)malloc(sizeof(char) * file_len);
+  char* file_data = (char*)malloc(sizeof(char) * (file_len + 1));
 
   if (file_data == NULL) {
     printf("malloc failed!\n");
     exit(1);
   }
 
-  for (int i = 0; i < file_len; i++) {
-    char c = fgetc(file);
-    file_data[i] = c;
+  size_t result = fread(file_data, 1, file_len, file);
+
+  if (result != file_len) {
+    printf("Error reading file!\n");
+    exit(1);
   }
+
+  file_data[file_len] = '\0';
 
   fclose(file);
 
