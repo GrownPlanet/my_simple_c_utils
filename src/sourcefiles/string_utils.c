@@ -2,7 +2,7 @@
 
 #define checkMalloc(v) if(v==NULL) { printf("malloc failed!\n"); exit(1); }
 
-int count_char(const char* s, char c) {
+static int count_char(const char* s, char c) {
   int count = 0;
   for (int i = 0; i < strlen(s); i++) {
     if (s[i] == c) {
@@ -12,7 +12,7 @@ int count_char(const char* s, char c) {
   return count;
 }
 
-int* lengs(const char* s, char c, int amount_of_parts) {
+static int* lengs(const char* s, char c, int amount_of_parts) {
   int* lengs = (int*)malloc(sizeof(int) * amount_of_parts);
   checkMalloc(lengs);
 
