@@ -48,7 +48,7 @@ int main() {
 
     VECTOR_free(&vector);
   }
-  printf("\n"):
+  printf("\n");
 
   {
     printf("reading a file to string\n");
