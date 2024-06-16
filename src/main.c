@@ -55,7 +55,7 @@ int main() {
 
     char* filename = "src/headerfiles/file_utils.h";
     printf("filename: %s\n", filename);
-    char* file = read_to_string(filename);
+    char* file = FILEU_read_to_string(filename);
     printf("file:\n%s", file);
   }
   printf("\n");

@@ -1,6 +1,6 @@
 #include "file_utils.h"
 
-char* read_to_string(char* filename) {
+char* FILEU_read_to_string(char* filename) {
   FILE* file = fopen(filename, "r");
 
   if (file == NULL) {

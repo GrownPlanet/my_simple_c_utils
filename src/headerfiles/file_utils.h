@@ -1,7 +1,10 @@
-#pragma once
+#ifndef FILE_UTILS_H
+#define FILE_UTILS_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-char* read_to_string(char* filename);
+char* FILEU_read_to_string(char* filename);
+
+#endif
