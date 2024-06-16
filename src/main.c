@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+#include "file_utils.h"
 #include "string_utils.h"
 #include "array_utils.h"
 #include "vector.h"
@@ -46,6 +47,16 @@ int main() {
     printf("11nth val: %d\n", VECTOR_get_index(&vector, 11));
 
     VECTOR_free(&vector);
+  }
+  printf("\n"):
+
+  {
+    printf("reading a file to string\n");
+
+    char* filename = "src/headerfiles/file_utils.h";
+    printf("filename: %s\n", filename);
+    char* file = read_to_string(filename);
+    printf("file:\n%s", file);
   }
   printf("\n");
 
