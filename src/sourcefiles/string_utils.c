@@ -28,7 +28,7 @@ int* lengs(const char* s, char c, int amount_of_parts) {
   return lengs;
 }
 
-struct SplitString split_by(const char* str, char ch) {
+struct SplitString STRINGU_split_by(const char* str, char ch) {
   int amount_of_parts = count_char(str, ch) + 1;
   int* part_lengs = lengs(str, ch, amount_of_parts);
 

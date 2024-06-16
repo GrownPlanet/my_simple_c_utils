@@ -1,4 +1,5 @@
-#pragma once
+#ifndef STRING_UTILS_H
+#define STRING_UTILS_H
 
 #include <stdio.h>
 #include <string.h>
@@ -11,4 +12,6 @@ struct SplitString {
 };
 
 // split a string by a given char
-struct SplitString split_by(const char* string, char ch);
+struct SplitString STRINGU_split_by(const char* string, char ch);
+
+#endif

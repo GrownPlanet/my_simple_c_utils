@@ -2,7 +2,22 @@
 
 #define die(s, ...) printf(s, ##__VA_ARGS__); exit(1);
 
-Vec new_vec(size_t capacity) {
+Vec VECTOR_new() {
+  int* data = (int*)malloc(0);
+
+  if (data == NULL) {
+    die("malloc failed\n");
+  }
+
+  int len = 0;
+  int capacity = 0;
+
+  Vec vector = {len, capacity, data};
+
+  return vector;
+}
+
+Vec VECTOR_new_with_capacity(size_t capacity) {
   size_t len = 0;
   int* data = (int*)malloc(sizeof(int) * capacity);
 
@@ -15,8 +30,12 @@ Vec new_vec(size_t capacity) {
   return vector;
 }
 
-void push_vec(Vec* vec, int val) {
+void VECTOR_push(Vec* vec, int val) {
   if (vec->len >= vec->capacity) {
+    if (vec -> capacity == 0) {
+      vec-> capacity += 1;
+    }
+
     vec->capacity *= 2;
     vec->data = (int*)realloc(vec->data, vec->capacity * sizeof(int));
 
@@ -29,7 +48,7 @@ void push_vec(Vec* vec, int val) {
   vec->len++;
 }
 
-void insert_vec(Vec* vec, size_t index, int val) {
+void VECTOR_insert(Vec* vec, size_t index, int val) {
   if (index > vec->len) {
     die("index (= %ld) should be greater or equal than the len (= %ld)\n", index, vec->len);
   }
@@ -51,19 +70,19 @@ void insert_vec(Vec* vec, size_t index, int val) {
   vec->len++;
 }
 
-int get_vec(Vec* vec, size_t index) {
+int VECTOR_get_index(Vec* vec, size_t index) {
   return vec->data[index];
 }
 
-void set_vec(Vec* vec, size_t index, int val) {
+void VECTOR_set_index(Vec* vec, size_t index, int val) {
   vec->data[index] = val;
 }
 
-void free_vec(Vec* vec) {
+void VECTOR_free(Vec* vec) {
   free(vec->data);
 }
 
-void print_vec(Vec* vec) {
+void VECTOR_print(Vec* vec) {
   printf("lenght: %ld, capacity: %ld\n", vec->len, vec->capacity);
   if (vec->len > 0) {
     printf("[");
